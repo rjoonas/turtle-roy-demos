@@ -1,0 +1,5 @@
+let r a = 0.5 + (parseInt ((Math.random()) * a))
+let f a b = sequence[width (r 16), fd (r a), lt (r b)]
+let g = \a -> repeat (r 120) (f 4 4)
+let h = \a -> sequence[home, color a, par (map (\x -> sequence[par (map g (range 0 100))]) (range 0 40))]
+sequence[clear, par[h "#06491405", h "#86591405", h "#46591405"]]
