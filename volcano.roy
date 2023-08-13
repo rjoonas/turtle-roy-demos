@@ -1,12 +1,5 @@
 let f a = 0.5 + (parseInt ((Math.random()) * a))
-let g a = sequence[fd 6, (if (a % 2 == 0) then rt else lt) (f (10 * (Math.sin(a / Math.PI))))]
-let h = sequence [penup, home, lt 180, fd 400, lt 180, pendown]
-let i a b c d = sequence[color a, par (map (\x -> sequence[h, sequence(map (\x -> sequence[width (4 + (d * b * (x / c))), g x]) (range 0 c))]) (range 0 (b * 10)))]
-
-sequence[clear, background "#002233"]
-i "#ffeeaa04" 20 200 6
-i "#ccaa3307" 18 180 4
-i "#ffaa4405" 16 160 4
-i "#cc223306" 12 140 2
-i "#ffffaa08" 12 120 1
-h
+let g a = s [fd 6, (if (a % 2 == 0) then rt else lt) (f (10 * (Math.sin(a / Math.PI))))]
+let h = s [penup, home, lt 180, fd 400, lt 180, pendown]
+let i a b c d = s [color a, par (map (\x -> s [h, s (map (\x -> s [width (4 + (d * b * (x / c))), g x]) (range 0 c))]) (range 0 (b * 10)))]
+s [clear, background "#002233", (i "#ffeeaa04" 20 200 6), (i "#ccaa3307" 18 180 4), (i "#ffaa4405" 16 160 4), (i "#cc223306" 12 140 2), (i "#ffffaa08" 12 120 1), h]
