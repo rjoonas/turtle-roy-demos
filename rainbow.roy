@@ -1,3 +1,6 @@
+tempo 95
+let m a = s [play a/2, play a, play a*2, play a*2.5]
+r 4 (s (map (\i -> r 8 (m i)) [d, a, g, d]))
 let f a = s [penup, home, lt 180, fd 300, rt (90 + a)]
 let g = s (map (\a -> s [if (a > 18) then pendown else penup, width (a / 2), color "hsl(" ++ (String (a * 12)) ++ ",100%,50%)", fd 10]) (range 1 45))
 s (concat [clear, bg "#142"] (map (\i -> s [f (i * 2), g, penup]) (range 1 90)))
