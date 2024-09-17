@@ -1,5 +1,5 @@
 tempo 229
-let loc = 130.81
+let loc = c/2
 r 8 (par [say "go ahead and jump", s (map play [loc, loc, d, loc, loc, e, loc, loc, c, loc, loc, c, loc, d, loc, d, d, loc, e, loc, loc, c, loc, a, loc, g, loc, g, g, g, g, g])])
 let f a = 0.5 + (parseInt ((Math.random()) * a))
 let g a = s [fd 6, (if (a % 2 == 0) then rt else lt) (f (10 * (Math.sin(a / Math.PI))))]
