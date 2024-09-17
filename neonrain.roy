@@ -1,0 +1,8 @@
+let x = 40
+let f = r 20 (s [pendown, fd 15, penup, fd 45])
+let g x = s [penup, home, fd 200, lt 90, fd 1000, lt (90 + x)]
+let h = s (map (\i -> s [f, penup, lt 90, fd x, lt 90, f, penup, rt 90, fd x, rt 90]) (range 1 50))
+let i x = s (map (\j -> s [g x, h]) (range 1 10))
+s [clear, bg "#000", color "#44aaff99", width 6, i 20, color "#ff44ff99", i 18, color "#44f44f99", i 19]
+tempo 64
+r 64 (par [play e/2, play b/2, play c*6])
